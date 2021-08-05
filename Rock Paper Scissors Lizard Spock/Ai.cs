@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rock_Paper_Scissors_Lizard_Spock
 {
-    class Program
+    class Ai
     {
-        static void Main(string[] args)
-        {
-            Player playerOne = new Player("Cyrus");
-            playerOne.ChooseGesture();
-        }
     }
 }
