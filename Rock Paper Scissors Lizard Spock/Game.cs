@@ -53,17 +53,17 @@ namespace Rock_Paper_Scissors_Lizard_Spock
             {
                 Console.WriteLine(gameMode);
             }
-            int gameModeChoice = Convert.ToInt32(Console.ReadLine());
+            string gameModeChoice =Console.ReadLine();
             switch (gameModeChoice)
             {
-                case 1:
+                case "1":
                     Console.WriteLine("You Chose Singleplayer");
                     Console.WriteLine("Please enter your name");
                     string name = Console.ReadLine();
                     playerOne = new Human(name);
                     playerTwo = new Ai();
                     break;
-                case 2:
+                case "2":
                     Console.WriteLine("You Chose Multiplayer");
                     Console.WriteLine("Please enter a name for player One");
                     string playerOneName = Console.ReadLine();
@@ -72,7 +72,11 @@ namespace Rock_Paper_Scissors_Lizard_Spock
                     string playerTwoname = Console.ReadLine();
                     playerTwo = new Human(playerTwoname);
                     break;
-                    
+                default:
+                    Console.WriteLine("Please select Singleplayer or Multiplayer");
+                    ChooseGameMode();
+                        break;
+                
             }
         }
         public void PlayerOneGesture()

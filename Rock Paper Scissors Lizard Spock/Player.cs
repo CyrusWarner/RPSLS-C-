@@ -33,26 +33,26 @@ namespace Rock_Paper_Scissors_Lizard_Spock
                 Console.WriteLine(gesture);
             }
             Console.WriteLine($"{name} please choose a gesture using the shown numbers");
-            int gestureNumber = Convert.ToInt32(Console.ReadLine());
+            string gestureNumber = Console.ReadLine();
             switch (gestureNumber)
             {
-                case 1:
+                case "1":
                     Console.WriteLine($"{name} Chose Rock");
                     gesture = "Rock";
                     break;
-                case 2:
+                case "2":
                     Console.WriteLine($"{name} Chose Paper");
                     gesture = "Paper";
                     break;
-                case 3:
+                case "3":
                     Console.WriteLine($"{name} Chose Scissors");
                     gesture = "Scissors";
                     break;
-                case 4:
+                case "4":
                     Console.WriteLine($"{name} Chose Lizard");
                     gesture = "Lizard";
                     break;
-                case 5:
+                case "5":
                     Console.WriteLine($"{name} Chose Spock");
                     gesture = "Spock";
                     break;
