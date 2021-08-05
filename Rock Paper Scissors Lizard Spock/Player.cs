@@ -15,9 +15,8 @@ namespace Rock_Paper_Scissors_Lizard_Spock
 
 
         //constructor
-        public Player (string name)
+        public Player()
         {
-            this.name = name;
         }
 
         //member methods
@@ -58,7 +57,7 @@ namespace Rock_Paper_Scissors_Lizard_Spock
                     gesture = "Spock";
                     break;
                 default:
-                    Console.WriteLine("Please enter a number to choose a gesture");
+                    Console.WriteLine("Please select a gesture");
                     ChooseGesture();
                     break;
 
