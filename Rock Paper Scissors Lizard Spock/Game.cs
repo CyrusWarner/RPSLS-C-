@@ -9,6 +9,7 @@ namespace Rock_Paper_Scissors_Lizard_Spock
     public class Game
     {
         Human playerOne;
+        Human playerTwo;
 
         public Game()
         {
@@ -20,6 +21,8 @@ namespace Rock_Paper_Scissors_Lizard_Spock
             Welcome();
 
             ChooseGameMode();
+
+            PlayerOneGesture();
         }
         public void Welcome()
         {
@@ -47,9 +50,19 @@ namespace Rock_Paper_Scissors_Lizard_Spock
                     break;
                 case 2:
                     Console.WriteLine("You Chose Multiplayer");
+                    Console.WriteLine("Please enter a name for player One");
+                    string playerOneName = Console.ReadLine();
+                    playerOne = new Human(playerOneName);
+                    Console.WriteLine("Please enter a name for player two");
+                    string playerTwoname = Console.ReadLine();
+                    playerTwo = new Human(playerTwoname);
                     break;
                     
             }
+        }
+        public void PlayerOneGesture()
+        {
+
         }
     }
 }
