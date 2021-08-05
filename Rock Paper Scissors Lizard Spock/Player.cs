@@ -20,7 +20,7 @@ namespace Rock_Paper_Scissors_Lizard_Spock
         }
 
         //member methods
-        public void ChooseGesture()
+        public virtual void ChooseGesture()
         {
             List<string> gestures = new List<string>();
             gestures.Add("(1) Rock");
@@ -37,23 +37,23 @@ namespace Rock_Paper_Scissors_Lizard_Spock
             switch (gestureNumber)
             {
                 case 1:
-                    Console.WriteLine("You Chose Rock");
+                    Console.WriteLine($"{name} Chose Rock");
                     gesture = "Rock";
                     break;
                 case 2:
-                    Console.WriteLine("You Chose Paper");
+                    Console.WriteLine($"{name} Chose Paper");
                     gesture = "Paper";
                     break;
                 case 3:
-                    Console.WriteLine("You Chose Scissors");
+                    Console.WriteLine($"{name} Chose Scissors");
                     gesture = "Scissors";
                     break;
                 case 4:
-                    Console.WriteLine("You Chose Lizard");
+                    Console.WriteLine($"{name} Chose Lizard");
                     gesture = "Lizard";
                     break;
                 case 5:
-                    Console.WriteLine("You Chose Spock");
+                    Console.WriteLine($"{name} Chose Spock");
                     gesture = "Spock";
                     break;
                 default:
@@ -66,5 +66,6 @@ namespace Rock_Paper_Scissors_Lizard_Spock
 
 
         }
+
     }
 }

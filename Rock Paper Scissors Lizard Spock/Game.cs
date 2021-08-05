@@ -8,8 +8,8 @@ namespace Rock_Paper_Scissors_Lizard_Spock
 {
     public class Game
     {
-        Human playerOne;
-        Human playerTwo;
+        Player playerOne;
+        Player playerTwo;
         bool doYouWantToPlayAgain = true;
 
         public Game()
@@ -61,6 +61,7 @@ namespace Rock_Paper_Scissors_Lizard_Spock
                     Console.WriteLine("Please enter your name");
                     string name = Console.ReadLine();
                     playerOne = new Human(name);
+                    playerTwo = new Ai();
                     break;
                 case 2:
                     Console.WriteLine("You Chose Multiplayer");
@@ -245,7 +246,6 @@ namespace Rock_Paper_Scissors_Lizard_Spock
                 }
 
             }
-            Console.ReadLine();
         }
     }
 }
