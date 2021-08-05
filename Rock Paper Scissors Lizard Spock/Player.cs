@@ -32,7 +32,7 @@ namespace Rock_Paper_Scissors_Lizard_Spock
             {
                 Console.WriteLine(gesture);
             }
-            Console.WriteLine("Please Select a Gesture using the shown numbers");
+            Console.WriteLine($"{name} please choose a gesture using the shown numbers");
             int gestureNumber = Convert.ToInt32(Console.ReadLine());
             switch (gestureNumber)
             {

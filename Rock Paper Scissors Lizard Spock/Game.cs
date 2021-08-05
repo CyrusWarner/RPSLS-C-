@@ -23,6 +23,8 @@ namespace Rock_Paper_Scissors_Lizard_Spock
             ChooseGameMode();
 
             PlayerOneGesture();
+
+            PlayerTwoGesture();
         }
         public void Welcome()
         {
@@ -62,7 +64,12 @@ namespace Rock_Paper_Scissors_Lizard_Spock
         }
         public void PlayerOneGesture()
         {
+           playerOne.ChooseGesture();
+        }
 
+        public void PlayerTwoGesture()
+        {
+            playerTwo.ChooseGesture();
         }
     }
 }
