@@ -22,9 +22,18 @@ namespace Rock_Paper_Scissors_Lizard_Spock
 
             ChooseGameMode();
 
-            PlayerOneGesture();
+            while (playerOne.roundsWon < 3 && playerTwo.roundsWon < 3)
+            {
+                PlayerOneGesture();
 
-            PlayerTwoGesture();
+                PlayerTwoGesture();
+
+                DetermineWinnerOfRound();
+            }
+            if (playerOne.roundsWon == 3 || playerTwo.roundsWon == 3)
+            {
+                ShowWinnerOfGame();
+            }
         }
         public void Welcome()
         {
@@ -70,6 +79,85 @@ namespace Rock_Paper_Scissors_Lizard_Spock
         public void PlayerTwoGesture()
         {
             playerTwo.ChooseGesture();
+        }
+
+        public void DetermineWinnerOfRound()
+        {
+            Console.WriteLine(playerOne.gesture);
+            if (playerOne.gesture == "Rock" && playerTwo.gesture == "Scissors")
+            {
+                Console.WriteLine("Rock Crushes Scissors");
+                Console.WriteLine($"{playerOne.name} won the round");
+                playerOne.roundsWon += 1;
+            }
+            if (playerOne.gesture == "Rock" && playerTwo.gesture == "Lizard")
+            {
+                Console.WriteLine("Rock Crushes Lizard");
+                Console.WriteLine($"{playerOne.name} won the round");
+                playerOne.roundsWon += 1;
+            }
+            if (playerOne.gesture == "Scissors" && playerTwo.gesture == "Paper")
+            {
+                Console.WriteLine("Scissors Cuts Paper");
+                Console.WriteLine($"{playerOne.name} won the round");
+                playerOne.roundsWon += 1;
+            }
+            if (playerOne.gesture == "Scissors" && playerTwo.gesture == "Paper")
+            {
+                Console.WriteLine("Scissors Decapitates Lizard");
+                Console.WriteLine($"{playerOne.name} won the round");
+                playerOne.roundsWon += 1;
+            }
+            if (playerOne.gesture == "Paper" && playerTwo.gesture == "Rock")
+            {
+                Console.WriteLine("Paper Covers Rock");
+                Console.WriteLine($"{playerOne.name} won the round");
+                playerOne.roundsWon += 1;
+            }
+            if (playerOne.gesture == "Paper" && playerTwo.gesture == "Rock")
+            {
+                Console.WriteLine("Paper Disproves Spock");
+                Console.WriteLine($"{playerOne.name} won the round");
+                playerOne.roundsWon += 1;
+            }
+            if (playerOne.gesture == "Lizard" && playerTwo.gesture == "Spock")
+            {
+                Console.WriteLine("Lizard Poisons Spock");
+                Console.WriteLine($"{playerOne.name} won the round");
+                playerOne.roundsWon += 1;
+            }
+            if (playerOne.gesture == "Lizard" && playerTwo.gesture == "Paper")
+            {
+                Console.WriteLine("Lizard Eats Paper");
+                Console.WriteLine($"{playerOne.name} won the round");
+                playerOne.roundsWon += 1;
+            }
+            if (playerOne.gesture == "Spock" && playerTwo.gesture == "Scissors")
+            {
+                Console.WriteLine("Spock Smashes Scissors");
+                Console.WriteLine($"{playerOne.name} won the round");
+                playerOne.roundsWon += 1;
+            }
+            if (playerOne.gesture == "Spock" && playerTwo.gesture == "Rock")
+            {
+                Console.WriteLine("Spocl Vaporizes Rock");
+                Console.WriteLine($"{playerOne.name} won the round");
+                playerOne.roundsWon += 1;
+            }
+            
+        }
+        public void ShowWinnerOfGame()
+        {
+            if(playerOne.roundsWon == 3)
+            {
+                Console.WriteLine($"{playerOne.name} has won the game!");
+            }
+            if(playerTwo.roundsWon == 3)
+            {
+                Console.WriteLine($"{playerTwo.name} has won the game!");
+            }
+            Console.ReadLine();
+
         }
     }
 }
