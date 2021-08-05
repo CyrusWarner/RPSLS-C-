@@ -10,6 +10,7 @@ namespace Rock_Paper_Scissors_Lizard_Spock
     {
         Human playerOne;
         Human playerTwo;
+        bool doYouWantToPlayAgain = true;
 
         public Game()
         {
@@ -33,6 +34,8 @@ namespace Rock_Paper_Scissors_Lizard_Spock
             if (playerOne.roundsWon == 3 || playerTwo.roundsWon == 3)
             {
                 ShowWinnerOfGame();
+
+                PlayAgain();
             }
         }
         public void Welcome()
@@ -102,7 +105,7 @@ namespace Rock_Paper_Scissors_Lizard_Spock
                 Console.WriteLine($"{playerOne.name} won the round");
                 playerOne.roundsWon += 1;
             }
-            if (playerOne.gesture == "Scissors" && playerTwo.gesture == "Paper")
+            if (playerOne.gesture == "Scissors" && playerTwo.gesture == "Lizard")
             {
                 Console.WriteLine("Scissors Decapitates Lizard");
                 Console.WriteLine($"{playerOne.name} won the round");
@@ -114,7 +117,7 @@ namespace Rock_Paper_Scissors_Lizard_Spock
                 Console.WriteLine($"{playerOne.name} won the round");
                 playerOne.roundsWon += 1;
             }
-            if (playerOne.gesture == "Paper" && playerTwo.gesture == "Rock")
+            if (playerOne.gesture == "Paper" && playerTwo.gesture == "Spock")
             {
                 Console.WriteLine("Paper Disproves Spock");
                 Console.WriteLine($"{playerOne.name} won the round");
@@ -140,11 +143,73 @@ namespace Rock_Paper_Scissors_Lizard_Spock
             }
             if (playerOne.gesture == "Spock" && playerTwo.gesture == "Rock")
             {
-                Console.WriteLine("Spocl Vaporizes Rock");
+                Console.WriteLine("Spock Vaporizes Rock");
                 Console.WriteLine($"{playerOne.name} won the round");
                 playerOne.roundsWon += 1;
             }
-            
+
+
+            if (playerTwo.gesture == "Rock" && playerOne.gesture == "Scissors")
+            {
+                Console.WriteLine("Rock Crushes Scissors");
+                Console.WriteLine($"{playerTwo.name} won the round");
+                playerTwo.roundsWon += 1;
+            }
+            if (playerTwo.gesture == "Rock" && playerOne.gesture == "Lizard")
+            {
+                Console.WriteLine("Rock Crushes Lizard");
+                Console.WriteLine($"{playerTwo.name} won the round");
+                playerTwo.roundsWon += 1;
+            }
+            if (playerTwo.gesture == "Scissors" && playerOne.gesture == "Paper")
+            {
+                Console.WriteLine("Scissors Cuts Paper");
+                Console.WriteLine($"{playerTwo.name} won the round");
+                playerTwo.roundsWon += 1;
+            }
+            if (playerTwo.gesture == "Scissors" && playerOne.gesture == "Lizard")
+            {
+                Console.WriteLine("Scissors Decapitates Lizard");
+                Console.WriteLine($"{playerTwo.name} won the round");
+                playerTwo.roundsWon += 1;
+            }
+            if (playerTwo.gesture == "Paper" && playerOne.gesture == "Rock")
+            {
+                Console.WriteLine("Paper Covers Rock");
+                Console.WriteLine($"{playerTwo.name} won the round");
+                playerTwo.roundsWon += 1;
+            }
+            if (playerTwo.gesture == "Paper" && playerOne.gesture == "Spock")
+            {
+                Console.WriteLine("Paper Disproves Spock");
+                Console.WriteLine($"{playerTwo.name} won the round");
+                playerTwo.roundsWon += 1;
+            }
+            if (playerTwo.gesture == "Lizard" && playerOne.gesture == "Spock")
+            {
+                Console.WriteLine("Lizard Poisons Spock");
+                Console.WriteLine($"{playerTwo.name} won the round");
+                playerTwo.roundsWon += 1;
+            }
+            if (playerTwo.gesture == "Lizard" && playerOne.gesture == "Paper")
+            {
+                Console.WriteLine("Lizard Eats Paper");
+                Console.WriteLine($"{playerTwo.name} won the round");
+                playerTwo.roundsWon += 1;
+            }
+            if (playerTwo.gesture == "Spock" && playerOne.gesture == "Scissors")
+            {
+                Console.WriteLine("Spock Smashes Scissors");
+                Console.WriteLine($"{playerTwo.name} won the round");
+                playerTwo.roundsWon += 1;
+            }
+            if (playerTwo.gesture == "Spock" && playerOne.gesture == "Rock")
+            {
+                Console.WriteLine("Spock Vaporizes Rock");
+                Console.WriteLine($"{playerTwo.name} won the round");
+                playerTwo.roundsWon += 1;
+            }
+
         }
         public void ShowWinnerOfGame()
         {
@@ -156,8 +221,31 @@ namespace Rock_Paper_Scissors_Lizard_Spock
             {
                 Console.WriteLine($"{playerTwo.name} has won the game!");
             }
-            Console.ReadLine();
+        }
 
+        public void PlayAgain()
+        {
+            Console.WriteLine("Hello");
+            while(doYouWantToPlayAgain)
+            {
+                Console.WriteLine("Would you like to play again y/n");
+                string userInput = Console.ReadLine();
+                switch (userInput)
+                {
+                    case "y":
+                        runGame();
+                        break;
+
+                    case "n":
+                        doYouWantToPlayAgain = false;
+                        break;
+                    default:
+                        Console.WriteLine( "Please enter y/n to play again");
+                        break;
+                }
+
+            }
+            Console.ReadLine();
         }
     }
 }
